@@ -1,21 +1,21 @@
 <x-layout>
-    <h2>{{ $hero->name }}</h2>
+    <h2 class="text-xl font-bold my-4">{{ $hero->name }}</h2>
     <div>
-        <p><strong>skill level: </strong>{{ $hero->skill }}</p>
-        <p><strong>Description:</strong></p>
-        <p>{{ $hero->bio }}</p>
+        <p class="my-2"><strong>skill level: </strong>{{ $hero->skill }}</p>
+        <p class="my-2"><strong>Description:</strong></p>
+        <p class="my-2">{{ $hero->bio }}</p>
     </div>
 
     <div class="border-2 border-dashed bg-white px-4 pb-4 my-4 rounded">
-        <h3>Universe information</h3>
-        <p><strong>Name: </strong> {{ $hero->universe->name }} </p>
-        <p><strong>Location: </strong> {{ $hero->universe->location }} </p>
-        <p><strong>Description: </strong></p>
-        <p> {{ $hero->universe->description }} </p>
+        <h3 class="text-lg font-bold my-4">Universe information</h3>
+        <p class="my-2"><strong>Name: </strong> {{ $hero->universe->name }} </p>
+        <p class="my-2"><strong>Location: </strong> {{ $hero->universe->location }} </p>
+        <p class="my-2"><strong>Description: </strong></p>
+        <p class="my-2"> {{ $hero->universe->description }} </p>
 
         <div class="flex gap-4">
             <a href="{{ route('heroes.edit', $hero->id) }}">
-                <button class="btn">
+                <button class="rounded px-3 py-2 bg-gray-200 hover:bg-red-500 hover:text-white">
                     Edit Hero
                 </button>
             </a>
@@ -24,7 +24,7 @@
                 @csrf
                 @method('DELETE')
 
-                <button type="submit" class="btn">
+                <button type="submit" class="rounded px-3 py-2 bg-gray-200 hover:bg-red-500 hover:text-white">
                     Delete Hero
                 </button>
             </form>
